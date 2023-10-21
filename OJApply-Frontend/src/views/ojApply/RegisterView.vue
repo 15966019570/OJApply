@@ -50,15 +50,6 @@ const rules = reactive<FormRules<typeof ruleForm>>({
 })
 
 const submitForm = (formEl: FormInstance | undefined) => {
-  // if (!formEl) return
-  // formEl.validate((valid) => {
-  //   if (valid) {
-  //     console.log('submit!')
-  //   } else {
-  //     console.log('error submit!')
-  //     return false
-  //   }
-  // })
   axios.post('http://127.0.0.1:8848/users',{
     "name":ruleForm.name,
     "email":ruleForm.email,
@@ -136,14 +127,7 @@ const resetForm = (formEl: FormInstance | undefined) => {
     </el-form-item>
   </el-form>
 
-    <!-- <p>姓名: </p>
-    <input type="text" v-model="inForm.name" placeholder="" />
-    <p>邮箱: </p>
-    <input type="email" v-model="inForm.email" placeholder="OJApply@qq.com" />
-    <p>密码: </p>
-    <input type="password" v-model="inForm.password" placeholder="" />
-    <br><br>
-    <button @click.prevent="onSubmit">注册</button> -->
+
   </div>
 </template>
 
@@ -156,3 +140,12 @@ h1{
   margin-left:30%;
 }
 </style>
+
+    <!-- <p>姓名: </p>
+    <input type="text" v-model="inForm.name" placeholder="" />
+    <p>邮箱: </p>
+    <input type="email" v-model="inForm.email" placeholder="OJApply@qq.com" />
+    <p>密码: </p>
+    <input type="password" v-model="inForm.password" placeholder="" />
+    <br><br>
+    <button @click.prevent="onSubmit">注册</button> -->
